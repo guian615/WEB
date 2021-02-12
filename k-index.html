@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Kerwien</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <style>
+    body {
+
+      padding-top: 100px;
+    }
+
+
+    #cont {
+
+      color: #fff;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1072%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(255%2c 255%2c 255%2c 1)'%3e%3c/rect%3e%3cpath d='M1231.1872808746116-74.23711469020654L1199.8566619102048 86.9449469259682 1361.0387235263795 118.27556589037502 1392.3693424907863-42.90649572579971z' fill='rgba(46%2c 117%2c 187%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1004.62 521.99 a122.17 122.17 0 1 0 244.34 0 a122.17 122.17 0 1 0 -244.34 0z' fill='rgba(46%2c 117%2c 187%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M359.6272439814475 426.49488816214244L352.796760582739 296.1615007881269 229.29385660743193 433.32537156085095z' fill='rgba(46%2c 117%2c 187%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M765.9960925938562 298.75147661793716L754.8618212489375 377.9759338263818 879.2656427340638 355.0651122395375z' fill='rgba(46%2c 117%2c 187%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1072'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+      background-size: cover, cover;
+      background-position: center, center;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+
+    .par {
+      border-bottom: 1px solid green;
+    }
+
+    #navbarNav li a {
+      display: block;
+      border-bottom: 3px solid transparent;
+      transition: 1s;
+    }
+
+    #navbarNav li a:hover {
+      border-bottom: 3px solid green;
+    }
+  </style>
+
+
+
+  <script>
+
+    function calc() {
+      var number1, number2, operation;
+      number1 = Number(document.getElementById("first").value);
+      number2 = Number(document.getElementById("second").value);
+      const operator = document.getElementById("Calculate").value;
+      document.getElementById("answer").value = operation;
+
+      switch (operator) {
+        case '+':
+          result = parseInt(number1) + parseInt(number2);
+          document.getElementById("answer").value = result;
+          break;
+
+        case '-':
+          result = number1 - number2;
+          document.getElementById("answer").value = result;
+          break;
+
+        case '*':
+          result = number1 * number2;
+          document.getElementById("answer").value = result;
+          break;
+
+        case '/':
+          result = number1 / number2;
+          document.getElementById("answer").value = result;
+          break;
+
+        default:
+          document.getElementById("answer") = ("Invalid Operation");
+          break;
+      }
+    }
+    function myFunction() {
+      var d = new Date();
+      var days = d.getDay();
+      document.getElementById("day").innerHTML = days;
+
+      switch (days) {
+        case 0:
+          document.getElementById("day").innerHTML = "Today is Sunday";
+          break;
+        case 1:
+          document.getElementById("day").innerHTML = "Today is Monday";
+          break;
+
+        case 2:
+          document.getElementById("day").innerHTML = "Today is Tuesday";
+          break;
+
+        case 3:
+          document.getElementById("day").innerHTML = "Today is Wednesday";
+          break;
+        case 4:
+          document.getElementById("day").innerHTML = "Today is Thursday";
+          break;
+
+        case 5:
+          document.getElementById("day").innerHTML = "Today is Friday";
+          break;
+        case 6:
+          document.getElementById("day").innerHTML = "Today is Saturday";
+          break;
+
+        default:
+
+      }
+      var daysleft = 14 - d.getDay();
+      document.getElementById("days").innerHTML = "and there are " + daysleft + "<p> days left until next Sunday</p>";
+    }   
+
+  </script>
+  <nav class="navbar h-20 fixed-top navbar-expand-lg font-bold navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img
+        src="https://www.pngfind.com/pngs/m/284-2842423_glitch-x-tumblr-maluma-transparent-background-x-tumblr.png"
+        width="50px" alt="" srcset=""></a>
+    <span class="lead">Ker~<span class="text-muted">g7ym</span></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto nav-pills " id="bar">
+        <li class="nav-item">
+          <a class="nav-link " href="#home"><b><button type="button" class="btn btn-secondary" data-toggle="modal"
+                data-target="#exer1">
+                Exercise1
+              </button></b></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="#abouts"><b><button type="button" class="btn btn-secondary" data-toggle="modal"
+                data-target="#exer2">
+                Exercise2
+              </button></b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#childhood"><b><button type="button" class="btn btn-secondary" data-toggle="modal"
+                data-target="#exer3">
+                Exercise3
+              </button></b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#love"><b><button type="button" class="btn btn-secondary" data-toggle="modal"
+                data-target="#exer4">
+                Exercise4
+              </button></b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#love"><b><button type="button" class="btn btn-secondary" data-toggle="modal"
+                data-target="#exer5">
+                Exercise5
+              </button></b></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="jumbotron text-center bg-transparent" id="cont">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="https://pm1.narvii.com/6299/2eb3b8359a4add7ee81aae69be2122c39c85d2a6_hq.jpg" alt="" srcset=""
+            style="width:80%;">
+          <h1 style="color:black;"></h1>
+        </div>
+        <div class="col-lg-5">
+          <br><br>
+          <h4 style="color:rgb(58, 58, 58);" class="par">Live Your Life Active and Healthy <img
+              src="https://cdn4.iconfinder.com/data/icons/sports-recreation/128/dumbbell-ol-3-512.png"
+              style="width:35px;" alt=""></h4>
+          <br>
+          <p class="lead" style="color:black;">Forever fit, forever strong! Get a jump on your day! Close to Home. Close
+            to Work. This gym will build up your confidence and makes your life fun and active</p>
+          <br>
+          <button class="btn btn-outline-primary"
+            style="border-top-right-radius: 20%;border-bottom-left-radius: 20%;">Contact Me</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exer1" tabindex="-1" aria-labelledby="exer1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exer1">Calculator</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="jumbotron jumbotron-fluid bg-transparent">
+            <div class="container">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    Enter the First number : <input id="first"
+                      style="background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);">
+                  </div>
+                  <div class="col-sm">
+                    Enter the Second number: <input id="second"
+                      style="background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);">
+                  </div>
+                  <div class="col-sm">
+                    Enter an Operator: <input id="Calculate"
+                      style="background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);">
+                  </div>
+                  <br><br>
+                  <div class="col-sm">
+                    <br><br>
+                    <button onclick="calc()" type="button" class="btn btn-success">Calculate</button>
+                    <br><br>
+                    <input id="answer" style="background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="exer2" tabindex="-1" aria-labelledby="exer2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exer2">Number of Days</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="jumbotron jumbotron-fluid bg-transparent">
+            <div class="container">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    <p class="lead">Click the button to display todays day of the week.</p>
+                  </div>
+                  <div class="col-sm">
+                    <button onclick="myFunction()" type="button" class="btn btn-success">Today is?</button>
+                  </div>
+                  <div class="col-sm">
+                    <p class="lead" id="day"></p>
+                    <p class="lead" id="days"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="exer3" tabindex="-1" aria-labelledby="exer3" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exer3">Compare Numbers</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <div class="container">
+                <div class="row">
+                  Enter the First number : <input  id="first" style="background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);">
+                  Enter the Second number: <input  id="second" style="background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);">
+                  <button onclick="compare1()" style="background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);">Compare</button>
+              
+
+                  <script>
+                    function compare1() {
+                            num1 = parseInt(document.getElementById("first").value);
+                            num2 = parseInt(document.getElementById("second").value);
+                            console.log(num1);
+                            console.log(num2);
+                            if (num1 < num2) {
+                                alert(num2);
+                            } else if (num1 > num2) {
+                                alert(num1);
+                            } else if (num1 == num2) {
+                                alert(num2 + 1);
+                            }
+                        }
+                      </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="modal fade" id="exer4" tabindex="-1" aria-labelledby="exer4" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exer4">Addition</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="modal fade" id="exer5" tabindex="-1" aria-labelledby="exer5" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exer5">Conversion</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>
